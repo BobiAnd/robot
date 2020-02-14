@@ -3,9 +3,15 @@ Documentation                       Testkörning av Phycharm
 Library                             SeleniumLibrary
 Test Setup                          Begin Web Test
 Test Teardown                       End Web Test
+
+*** Variables ***
+${BROWSER} =  chrome
+${URL} =  http://www.amazon.com
+${SERACH_TERM} =  ferrari 458
+
 *** Keywords ***
 Begin Web Test
-    Open Browser                      about:blank  chrome
+    Open Browser                      about:blank  ${BROWSER}
 
 Go to Web Page
     Load Page
@@ -13,7 +19,7 @@ Go to Web Page
 
 
 Load Page
-    Go to                           Http://wwww.amazon.com
+    Go to                           ${URL}
 
 
 Verify page Loaded
@@ -25,7 +31,7 @@ Search for Product
     Verify Search Completed
 
 Enter Search Term
-    Input Text                      id:twotabsearchtextbox  ferrari 458
+    Input Text                      id:twotabsearchtextbox  ${SERACH_TERM}
 
 Submit Search
     Click Button                    xpath://*[@id="nav-search"]/form/div[2]/div/input
