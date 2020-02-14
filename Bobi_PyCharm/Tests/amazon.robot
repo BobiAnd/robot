@@ -1,6 +1,8 @@
 *** Settings ***
-Documentation  Testkörning av Phycharm
-Library  SeleniumLibrary
+Documentation                       Testkörning av Phycharm
+Library                             SeleniumLibrary
+Test Setup                          Begin Web Test
+Test Teardown                       End Web Test
 *** Keywords ***
 Begin Web Test
     Open Browser                      about:blank  chrome
@@ -25,7 +27,7 @@ Verify Search Completed
 End Web Test
     Close Browser
 *** Test Cases ***
-Testar amazon.com
+Användaren kan logga in på amazon.com och utföra sökning
     [Documentation]                Testar om det funkar
     [Tags]                          Test 1
     Begin Web Test
