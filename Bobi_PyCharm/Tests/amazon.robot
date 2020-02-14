@@ -15,29 +15,32 @@ Begin Web Test
 
 Go to Web Page
     Load Page
-    Verify page Loaded
+    Verify Page Loaded
 
 
 Load Page
-    Go to                           ${URL}
+    Go To                           ${URL}
 
 
-Verify page Loaded
-     Wait Until Page Contains           Your Amazon.com
+Verify Page Loaded
+    Wait Until Page Contains            Your Amazon.com
 
 Search for Product
-    Enter Search Term
+    [Arguments]                      ${search_term}  ${search_result}
+    Enter Search Term                ${search_term}
     Submit Search
-    Verify Search Completed
+    Verify Search Completed          ${search_result}
 
 Enter Search Term
-    Input Text                      id:twotabsearchtextbox  ${SERACH_TERM}
+    [Arguments]                        ${search_term}
+    Input Text                      id:twotabsearchtextbox  ${search_term}
 
 Submit Search
     Click Button                    xpath://*[@id="nav-search"]/form/div[2]/div/input
 
 Verify Search Completed
-    Wait Until Page Contains        results for "ferrari 458"
+    [Arguments]                             ${search_result}
+  Wait Until Page Contains                  ${search_result}
 
 End Web Test
     Close Browser
@@ -48,10 +51,8 @@ kommer åt hemsidan amazon.com
 
     Go to Web Page
 nvändaren kan utföra sökning
-    [Documentation]                Testar om det funkar
+    [Documentation]                Testar om det funkar att söka ferarri
     [Tags]                          Test 2
     Go to Web Page
-
-    Search for Product
-
+    Search for Product              ferrari 458  results for "ferrari 458"
 
