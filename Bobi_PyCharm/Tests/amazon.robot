@@ -9,21 +9,30 @@ Begin Web Test
 
 Go to Web Page
     Load Page
-    Verify page LoadedInput Text                      id:twotabsearchtextbox  ferrari 458
-    Click Button                    xpath://*[@id="nav-search"]/form/div[2]/div/input
-    Wait Until Page Contains        results for "ferrari 458"
+    Verify page Loaded
+
+
 Load Page
     Go to                           Http://wwww.amazon.com
+
+
 Verify page Loaded
+     Wait Until Page Contains           Your Amazon.com
+
+Search for Product
     Enter Search Term
-    Submit Serch
-    Verify earch Completed
+    Submit Search
+    Verify Search Completed
+
 Enter Search Term
     Input Text                      id:twotabsearchtextbox  ferrari 458
+
 Submit Search
     Click Button                    xpath://*[@id="nav-search"]/form/div[2]/div/input
+
 Verify Search Completed
     Wait Until Page Contains        results for "ferrari 458"
+
 End Web Test
     Close Browser
 *** Test Cases ***
