@@ -36,13 +36,16 @@ Verify Search Completed
 End Web Test
     Close Browser
 *** Test Cases ***
-Användaren kan logga in på amazon.com och utföra sökning
+kommer åt hemsidan amazon.com
     [Documentation]                Testar om det funkar
     [Tags]                          Test 1
-    Begin Web Test
 
+    Go to Web Page
+nvändaren kan utföra sökning
+    [Documentation]                Testar om det funkar
+    [Tags]                          Test 2
     Go to Web Page
 
     Search for Product
 
-    End Web Test
+
